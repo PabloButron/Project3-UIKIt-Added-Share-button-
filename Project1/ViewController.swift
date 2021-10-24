@@ -13,6 +13,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // just added after checcking on main storyboard accesory disclosure indicator
+        title = "Storm viewer"
 
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!

@@ -18,12 +18,15 @@ class ViewController: UITableViewController {
 
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
+        
+        // Challenge 2 completed adding .sorted at the end of below
+        let items = try! fm.contentsOfDirectory(atPath: path).sorted()
 
         for item in items {
             
             if item.hasPrefix( "nssl"){
-                pictures.sort()
+                
+                
                 //This is a picture to load
                 pictures.append(item)
             }

@@ -13,11 +13,12 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // just added after checcking on main storyboard accesory disclosure indicator
+        // Just added after checcking on main storyboard accesory disclosure indicator
         title = "Storm viewer"
 
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
+      //  var total = pictures.count
         
         // Challenge 2 completed adding .sorted at the end of below
         let items = try! fm.contentsOfDirectory(atPath: path).sorted()
@@ -25,7 +26,9 @@ class ViewController: UITableViewController {
         for item in items {
             
             if item.hasPrefix( "nssl"){
-                
+               
+        
+                // var totalItems:Int = pictures.count
                 
                 //This is a picture to load
                 pictures.append(item)
@@ -33,7 +36,7 @@ class ViewController: UITableViewController {
         }
         
         
-        print(pictures)
+     //   print(pictures)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

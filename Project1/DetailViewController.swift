@@ -11,6 +11,8 @@ class DetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     var selectedImage : String?
+    var PictureNumber = 0
+    var TotalPictures = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

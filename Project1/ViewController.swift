@@ -20,16 +20,13 @@ class ViewController: UITableViewController {
         let path = Bundle.main.resourcePath!
       //  var total = pictures.count
         
-        // Challenge 2 completed adding .sorted at the end of below
+        // Challenge 2 completed adding .sorted at the end of below line of code
         let items = try! fm.contentsOfDirectory(atPath: path).sorted()
 
         for item in items {
             
             if item.hasPrefix( "nssl"){
                
-        
-                // var totalItems:Int = pictures.count
-                
                 //This is a picture to load
                 pictures.append(item)
             }

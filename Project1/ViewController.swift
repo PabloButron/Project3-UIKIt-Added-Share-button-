@@ -14,7 +14,13 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Just added after checcking on main storyboard accesory disclosure indicator
+        
         title = "Storm viewer"
+        navigationItem.largeTitleDisplayMode = .automatic
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareToFriends))
+                                                            
+                                                            
 
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -33,7 +39,6 @@ class ViewController: UITableViewController {
         }
         
         
-     //   print(pictures)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +57,18 @@ class ViewController: UITableViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    @objc func shareToFriends (){
+            guard let shareapp = title else {
+                print ("No app to share")
+                return
+            }
+        let vc = UIActivityViewController (activityItems: [shareapp], applicationActivities: [])
+        
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present (vc, animated: true)
+}
+    
     
 }
 
